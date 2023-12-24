@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'data.config.broker',
     'data.config.active',
+
+    'data.history.candle',
 ]
 
 MIDDLEWARE = [
