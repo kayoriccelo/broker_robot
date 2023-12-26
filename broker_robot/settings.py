@@ -38,8 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'data.config.broker',
     'data.config.active',
+    'data.config.broker',
+    'data.config.cycle',
+    'data.config.management',
+    'data.config.martingale',
+    'data.config.soros',
+    'data.config.strategy',
+    'data.config.strategy_candle',
 
     'data.history.candle',
 ]
