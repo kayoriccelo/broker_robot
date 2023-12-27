@@ -8,6 +8,7 @@ class Cycle(models.Model):
     sequence = models.IntegerField(default=0, null=True, blank=True)
     status = models.IntegerField(choices=C_STATUS_CYCLE, default=STATUS_CYCLE_ACTIVE, null=True, blank=True)
 
+    account = models.ForeignKey('account.Account', related_name='cycles', on_delete=models.CASCADE)
     martingale = models.ForeignKey('martingale.Martingale', related_name='cycles', on_delete=models.CASCADE)
     soros = models.ForeignKey('soros.Soros', related_name='cycles', on_delete=models.CASCADE)
 

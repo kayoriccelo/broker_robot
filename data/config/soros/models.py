@@ -8,6 +8,8 @@ class Soros(models.Model):
     multiplier = models.IntegerField()
     status = models.IntegerField(choices=C_STATUS_SOROS, default=STATUS_SOROS_ACTIVE, null=True, blank=True)
 
+    account = models.ForeignKey('account.Account', related_name='soros', on_delete=models.CASCADE)
+
     class Meta:
         verbose_name = u'Soros'
         verbose_name_plural = u'Soros'

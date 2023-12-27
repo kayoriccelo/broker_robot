@@ -8,6 +8,8 @@ class Active(models.Model):
     description = models.CharField(max_length=200)
     status = models.IntegerField(choices=C_STATUS_ACTIVE, default=STATUS_ACTIVE_ACTIVE, null=True, blank=True)
 
+    account = models.ForeignKey('account.Account', related_name='active', on_delete=models.CASCADE)
+
     class Meta:
         verbose_name = u'Active'
         verbose_name_plural = u'Active'

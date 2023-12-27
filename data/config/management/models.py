@@ -8,6 +8,7 @@ class Management(models.Model):
     description = models.CharField(max_length=200)
     status = models.IntegerField(choices=C_STATUS_MANAGEMENT, default=STATUS_MANAGEMENT_ACTIVE, null=True, blank=True)
     
+    account = models.ForeignKey('account.Account', related_name='managements', on_delete=models.CASCADE)
     broker = models.ForeignKey('broker.Broker', related_name='managements', on_delete=models.CASCADE)
     active = models.ManyToManyField('active.Active', related_name='managements')
     cycles = models.ManyToManyField('cycle.Cycle', related_name='managements', blank=True)

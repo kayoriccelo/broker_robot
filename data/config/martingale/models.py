@@ -9,6 +9,8 @@ class Martingale(models.Model):
     reverse = models.BooleanField(default=False, null=True, blank=True)
     status = models.IntegerField(choices=C_STATUS_MARTINGALE, default=STATUS_MARTINGALE_ACTIVE, null=True, blank=True)
 
+    account = models.ForeignKey('account.Account', related_name='martingales', on_delete=models.CASCADE)
+
     class Meta:
         verbose_name = u'Martingale'
         verbose_name_plural = u'Martingale'

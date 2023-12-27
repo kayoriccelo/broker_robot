@@ -8,6 +8,7 @@ class Strategy(models.Model):
     description = models.CharField(max_length=200)
     status = models.IntegerField(choices=C_STATUS_STRATEGY, default=STATUS_STRATEGY_ACTIVE, null=True, blank=True)
     
+    account = models.ForeignKey('account.Account', related_name='strategies', on_delete=models.CASCADE)
     cycles = models.ManyToManyField('cycle.Cycle', related_name='strategies', blank=True)
     
     class Meta:
